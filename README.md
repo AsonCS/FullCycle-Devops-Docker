@@ -1,5 +1,13 @@
 # Full Cycle - Devops - Docker (Full Cycle 3.0 Course)
 
+<div align="center">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+    <img src="https://img.shields.io/badge/Docker-1D63ED?style=for-the-badge&logo=docker&logoColor=white">
+    <img src="https://img.shields.io/badge/Shell-B82E00?style=for-the-badge&logo=shell&logoColor=white">
+    <img src="https://img.shields.io/badge/Go-007D9C?style=for-the-badge&logo=go&logoColor=white">
+    <img src="https://img.shields.io/badge/Mysql-3E6E93?style=for-the-badge&logo=mysql&logoColor=white">
+</div>
+
 ## Folder [/course](/course)
 
 ## Folder [/challenge_go](/challenge_go)
