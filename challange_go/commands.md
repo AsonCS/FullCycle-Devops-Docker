@@ -1,0 +1,7 @@
+- `docker build -t asoncs/fc_devops_docker-challenge_go .`
+- `docker run --rm asoncs/fc_devops_docker-challenge_go`
+- `docker run -it --rm -v .:/app asoncs/fc_devops_docker-challenge_go`
+- `docker push asoncs/fc_devops_docker-challenge_go`
+- `docker build -t asoncs/fc_devops_docker-challenge_go -f Dockerfile.prod .`
+- `docker run --rm asoncs/fc_devops_docker-challenge_go`
+- `go build cmd/app/main.go`
