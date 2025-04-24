@@ -7,7 +7,13 @@
 -   <a href="https://hub.docker.com/repository/docker/asoncs/fc_devops_docker-challenge_go"><b>Docker Hub</b> link image</a>
 -   Docker command `docker run asoncs/fc_devops_docker-challenge_go`
 
+### Output
+
 <img alt="Command output" src="challenge_go/output.png" />
+
+### Image size
+
+<img alt="Command output" src="challenge_go/size.png" />
 
 ### main.go
 
