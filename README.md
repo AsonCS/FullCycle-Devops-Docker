@@ -23,7 +23,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Full Cycle Rocks!!")
+    fmt.Println("Full Cycle Rocks!!")
 }
 ```
 
@@ -53,67 +53,67 @@ CMD [ "./main" ]
 
 ```yaml
 services:
-	app:
-		build:
-			context: node
-		container_name: app
-		networks:
-			- nginx_node
-		volumes:
-			- ./node:/usr/src/app
-		tty: true
-		depends_on:
-			db:
-				condition: service_started
-		ports:
-			- '3000:3000'
+    app:
+        build:
+            context: node
+        container_name: app
+        networks:
+            - nginx_node
+        volumes:
+            - ./node:/usr/src/app
+        tty: true
+        depends_on:
+            db:
+                condition: service_started
+        ports:
+            - '3000:3000'
 
-	db:
-		image: mysql:5.7
-		container_name: db
-		command: --innodb-use-native-aio=0
-		restart: always
-		tty: true
-		volumes:
-			- ./mysql:/var/lib/mysql
-		environment:
-			- MYSQL_DATABASE=nodedb
-			- MYSQL_ROOT_PASSWORD=root
-		networks:
-			- nginx_node
+    db:
+        image: mysql:5.7
+        container_name: db
+        command: --innodb-use-native-aio=0
+        restart: always
+        tty: true
+        volumes:
+            - ./mysql:/var/lib/mysql
+        environment:
+            - MYSQL_DATABASE=nodedb
+            - MYSQL_ROOT_PASSWORD=root
+        networks:
+            - nginx_node
 
-	nginx:
-		build:
-			context: nginx
-		container_name: nginx
-		depends_on:
-			app:
-				condition: service_started
-		networks:
-			- nginx_node
-		ports:
-			- '8080:80'
+    nginx:
+        build:
+            context: nginx
+        container_name: nginx
+        depends_on:
+            app:
+                condition: service_started
+        networks:
+            - nginx_node
+        ports:
+            - '8080:80'
 
 networks:
-	nginx_node:
-		driver: bridge
+    nginx_node:
+        driver: bridge
 ```
 
 ### nginx.conf
 
 ```conf
 server {
-	listen "80";
+    listen "80";
 
-	add_header "X-Frame-Options" "SAMEORIGIN";
-	add_header "X-XSS-Protection" "1; mode=block";
-	add_header "X-Content-Type-Options" "nosniff";
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    add_header "X-XSS-Protection" "1; mode=block";
+    add_header "X-Content-Type-Options" "nosniff";
 
-	charset "utf-8";
+    charset "utf-8";
 
-	location / {
-		proxy_pass "http://app:3000";
-	}
+    location / {
+        proxy_pass "http://app:3000";
+    }
 }
 ```
 

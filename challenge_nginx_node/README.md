@@ -58,17 +58,17 @@ networks:
 
 ```conf
 server {
-	listen "80";
+    listen "80";
 
-	add_header "X-Frame-Options" "SAMEORIGIN";
-	add_header "X-XSS-Protection" "1; mode=block";
-	add_header "X-Content-Type-Options" "nosniff";
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    add_header "X-XSS-Protection" "1; mode=block";
+    add_header "X-Content-Type-Options" "nosniff";
 
-	charset "utf-8";
+    charset "utf-8";
 
-	location / {
-		proxy_pass "http://app:3000";
-	}
+    location / {
+        proxy_pass "http://app:3000";
+    }
 }
 ```
 
